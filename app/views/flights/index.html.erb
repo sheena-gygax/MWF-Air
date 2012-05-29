@@ -20,14 +20,14 @@
   <tbody>
 	<% @flights.each do |flight| %>
     <tr>
-      <td><button>Book Now</button></td>
+      <td><%= link_to "Book Now", new_reservation_url(flight_id: flight.id) %></td>
       <td><%= flight.flight_number %></td>
       <td><%= flight.depart_code %></td>
       <td><%= flight.depart_time.strftime('%l:%M %P') %></td>
       <td><%= flight.arrival_code %></td>
       <td>--</td>
       <td>--</td>
-      <td><%= MileageCalculator.new(flight.depart_code, flight.arrival_code).miles %></td>
+      <td><%= flight.distance %></td>
 			<% end %>
     </tr>
 	</tbody>

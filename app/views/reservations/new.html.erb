@@ -1,0 +1,23 @@
+<%= form_for(@reservation) do |f| %>
+	<% if @reservation.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+			
+			<ul>
+				<% @reservation.errors.full_messages.each do |msg| %>
+				<%= msg %>
+				<% end %>
+			</ul>
+			</div>
+	<% end %>
+	
+	<h2>Flight Number <%= @reservation.flight.flight_number %></h2>
+	<h2>From: <%= @reservation.flight.depart_code %></h2>
+	<h2>To: <%= @reservation.flight.arrival_code %></h2>
+	
+	<%= f.hidden_field :flight_id %>
+	
+	
+	
+	
+<% end %>

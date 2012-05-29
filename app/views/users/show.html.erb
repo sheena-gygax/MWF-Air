@@ -1,0 +1,13 @@
+<h1>Profile Page</h1>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<%= gravatar_for @user %>
+				<p><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></p>
+				<p><strong>Miles Earned:</strong></p>
+				<p><%= @user.flyer_miles.to_i %></p>
+				
+		</h1>
+	</section>
+</div>

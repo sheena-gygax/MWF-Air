@@ -1,0 +1,37 @@
+<h1>Sign Up with Academy Air</h1>
+
+<% if @user.present? %>
+	<div class="notice">
+		
+	<% @user.errors.full_messages.each do |message| %>
+	<li ><%= message %></li>
+	<% end %>
+	</div>
+	<% end %>
+
+
+<%= form_for @user do |f| %>
+	<p>
+	<%= f.label :first_name, 'First Name' %>
+	<%= f.text_field :first_name %>
+	</p>
+	<p>
+	<%= f.label :last_name, 'Last Name' %>
+	<%= f.text_field :last_name %>
+	</p>
+	<p>
+	<%= f.label :email, 'Email' %>
+	<%= f.text_field :email %>
+	</p>
+	<p>
+	<%= f.label :password, 'Password' %>
+	<%= f.password_field :password %>
+	</p>
+	<p>
+	<%= f.label :password_confirmation, 'Password Confirmation' %>
+	<%= f.password_field :password_confirmation %>
+	</p>
+	<p>
+	<%= f.submit 'Join up!' %>
+	</p>
+	<% end %>
